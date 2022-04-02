@@ -7,7 +7,6 @@ from posts.models import Comment, Follow, Group, Post, User
 
 class PostSerializer(serializers.ModelSerializer):
     author = SlugRelatedField(slug_field='username', read_only=True)
-    # group = SlugRelatedField(slug_field='group', read_only=True)
 
     class Meta:
         fields = '__all__'
@@ -51,9 +50,6 @@ class FollowSerializer(serializers.ModelSerializer):
         ]
 
     def validate(self, data):
-        """
-        Check that start is before finish.
-        """
         if data['user'] == data['following']:
             raise serializers.ValidationError("finish must occur after start")
         return data
