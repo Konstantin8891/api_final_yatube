@@ -15,7 +15,7 @@ router.register(
     CommentViewSet,
     basename='comment'
 )
-router.register('follow', FollowViewSet)
+router.register('follow', FollowViewSet, basename='follow')
 
 urlpatterns = [
     # JWT-эндпоинты, для управления JWT-токенами:
