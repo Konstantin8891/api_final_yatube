@@ -1,11 +1,12 @@
+from django.shortcuts import get_object_or_404
 from rest_framework import filters, viewsets
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import AllowAny
 
 from .permissions import IsOwnerOrReadOnly, FollowPermission
-from .serializers import (CommentSerializer, FollowSerializer, GroupSerializer,
-                          PostSerializer)
-from posts.models import Comment, Group, Post
+from .serializers import (CommentSerializer, FollowSerializer, 
+                          GroupSerializer, PostSerializer)
+from posts.models import Group, Post
 
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -30,11 +31,12 @@ class CommentViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         post_id = self.kwargs.get("post_id")
-        try:
-            new_queryset = Comment.objects.filter(post=post_id)
-            return new_queryset
-        except ValueError:
-            raise ValueError
+        post = get_object_or_404(Post, pk=post_id)
+        # Я бы сделал так, но тесты при этом валятся, хотя в Postman
+        # всё на первый взгляд ок, хотя бы отчасти
+        # new_queryset = get_list_or_404(Comment, post_id=post_id)
+        # return new_queryset
+        return post.comments.all()
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
