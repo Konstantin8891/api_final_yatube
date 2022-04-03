@@ -1,5 +1,6 @@
 # api_final
-api final yatube
+API final Yatube - API for the social network Yatube. Social network Yatube provides you ability for posting information including media files, following post author, commenting posts. Developed by Konstantin Vasilyev.
+
 
 1. Clone project 
 git clone git@github.com:Konstantin8891/api_final_yatube.git
@@ -16,3 +17,5 @@ pip install -r requirements.txt
 python manage.py migrate
 8. Run project
 python manage.py runserver
+9. Now you're able to see examples of requests for my API at 
+http://127.0.0.1:8000/redoc/
