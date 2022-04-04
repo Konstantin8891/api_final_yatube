@@ -17,5 +17,53 @@ pip install -r requirements.txt
 python manage.py migrate
 8. Run project
 python manage.py runserver
-9. Now you're able to see examples of requests for my API at 
-http://127.0.0.1:8000/redoc/
+Project endpoints:
+1. http://127.0.0.1:8000/api/v1/posts/
+Requests - GET, POST
+{
+"text": "string",
+"image": "string",
+"group": 0
+}
+2. http://127.0.0.1:8000/api/v1/posts/{id}/
+Requests - GET, PUT, PATCH, DELETE
+{
+"text": "string",
+"image": "string",
+"group": 0
+}
+3. http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/
+Requests - GET, POST
+{
+"text": "string"
+}
+4. http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/{id}/
+Requests - GET, PUT, PATCH, DELETE
+{
+"text": "string"
+}
+5. http://127.0.0.1:8000/api/v1/groups/
+Request - GET
+6. http://127.0.0.1:8000/api/v1/groups/{id}/
+Response - GET
+7. http://127.0.0.1:8000/api/v1/follow/
+Request - GET, POST
+{
+"following": "string"
+}
+8. http://127.0.0.1:8000/api/v1/jwt/create/
+Request - POST
+{
+"username": "string",
+"password": "string"
+}
+9. http://127.0.0.1:8000/api/v1/jwt/refresh/
+Request - POST
+{
+"refresh": "string"
+}
+10. http://127.0.0.1:8000/api/v1/jwt/verify/
+Request - POST
+{
+"token": "string"
+}
