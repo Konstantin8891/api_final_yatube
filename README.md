@@ -17,6 +17,8 @@ pip install -r requirements.txt
 python manage.py migrate
 8. Run project
 python manage.py runserver
+9. Project Redoc
+http://127.0.0.1:8000/redoc/
 Project endpoints:
 1. http://127.0.0.1:8000/api/v1/posts/
 Requests - GET, POST
