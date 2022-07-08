@@ -1,5 +1,5 @@
 # API Yatube
-API Yatube - API for the social network Yatube. Social network Yatube provides you ability for posting information including media files, following authors, commenting posts. Developed by Konstantin Vasilyev. Based on Django REST Framework 3.12.4.
+API Yatube - API for the social network Yatube. Social network Yatube provides you ability for posting information including media files, following authors, commenting posts. Developed by Konstantin Vasilyev. Based on Django REST Framework 3.12.4. All dependecies are in requirements.txt.
 
 89670253660@mail.ru
 
