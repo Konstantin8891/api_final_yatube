@@ -32,8 +32,6 @@ class CommentViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         post_id = self.kwargs.get("post_id")
         post = get_object_or_404(Post, pk=post_id)
-        # Я бы сделал так, но тесты при этом валятся, хотя в Postman
-        # всё на первый взгляд ок, хотя бы отчасти
         # new_queryset = get_list_or_404(Comment, post_id=post_id)
         # return new_queryset
         return post.comments.all()
