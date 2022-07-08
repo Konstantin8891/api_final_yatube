@@ -1,5 +1,5 @@
-# api_final
-API final Yatube - API for the social network Yatube. Social network Yatube provides you ability for posting information including media files, following post author, commenting posts. Developed by Konstantin Vasilyev. Based on Django REST Framework.
+# API Yatube
+API Yatube - API for the social network Yatube. Social network Yatube provides you ability for posting information including media files, following post author, commenting posts. Developed by Konstantin Vasilyev. Based on Django REST Framework.
 
 89670253660@mail.ru
 
@@ -15,9 +15,17 @@ git clone git@github.com:Konstantin8891/api_final_yatube.git
 
 python -m venv env
 
+or 
+
+python3 -m venv venv
+
 4. Activate virtual environment 
 
 source venv/scripts/activate
+
+or 
+
+. venv/bin/activate
 
 5. Upgrade pip 
 
@@ -79,12 +87,14 @@ Response:
     "image": "string",
     "group": 0
 }
+
 3. http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/
 
 Requests - GET, POST
 {
     "text": "string"
 }
+
 Response:
 [
     {
@@ -95,6 +105,7 @@ Response:
         "post": 0
     }
 ]
+
 4. http://127.0.0.1:8000/api/v1/posts/{post_id}/comments/{id}/
 
 Requests - GET, PUT, PATCH, DELETE
