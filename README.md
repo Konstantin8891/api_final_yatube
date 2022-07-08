@@ -5,6 +5,19 @@ API Yatube - API for the social network Yatube. Social network Yatube provides y
 
 +79117836285 WhatsApp, Telegram
 
+## System requirements:
+- Install Python 3.7 and prepare enviroment
+Install software: download and run files
+
+Python: www.python.org/downloads/ choose Python 3.7
+
+Visual Studio Code: code.visualstudio.com/download
+
+Git: git-scm.com/download/win
+
+- Terminal for Unix systems or emulator of terminal for Windows
+> Everything else will be installed during steps below
+
 1. Clone project 
 
 git clone git@github.com:Konstantin8891/api_final_yatube.git
